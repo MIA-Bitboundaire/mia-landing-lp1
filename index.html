@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mia · Seu cliente marca o horário e paga sozinho</title>
+<meta name="description" content="Você manda um link. Seu cliente escolhe o serviço, o dia e o horário, paga na hora e o dinheiro cai direto na sua conta. Sem mensalidade e sem app.">
+<meta name="theme-color" content="#08283A">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mia · Seu cliente marca o horário e paga sozinho">
+<meta property="og:description" content="Você manda um link. Seu cliente escolhe o serviço, o dia e o horário, paga na hora e o dinheiro cai direto na sua conta.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://lp1.miaapp.com.br/">
+<!-- TODO: og:image quando a arte social estiver definida -->
+
+<!-- OpenAI Ads (ChatGPT Ads) — script de configuração do painel, no topo do <head> -->
+<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Hp6vxcY38XyiUvp6rbK3mq"});</script>
+<script>
+  // O SDK não dispara page view sozinho: sem esta linha, o pixel carrega e não registra nada.
+  oaiq("measure", "page_viewed");
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ykcqxc0ffo");
+</script>
+
+<!-- RudderStack JavaScript SDK -->
+<script type="text/javascript">
+  !function(){"use strict";window.RudderSnippetVersion="3.3.0";var e="rudderanalytics";window[e]||(window[e]=[])
+  ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+  if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+  console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+  window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com";var sdkVersion="v3"
+  ;var sdkFileName="rsa.min.js";var scriptLoadingMode="async"
+  ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent","addCustomIntegration","setCustomContext","clearCustomContext"]
+  ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+  ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+  }}(t)}try{
+  new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+  window.rudderAnalyticsBuildType="modern"}catch(i){}var d=document.head||document.getElementsByTagName("head")[0]
+  ;var o=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+  var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+  "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+  d?d.insertBefore(t,d.firstChild):o.insertBefore(t,o.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+  if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+  return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+  value:r,configurable:true})}
+  }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(sdkVersion,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkFileName),"data-rsa-write-key","34ndFYFhQmaiPjSdHmsHucwPRtV")
+  },
+  "undefined"==typeof Promise||"undefined"==typeof globalThis?window.rudderAnalyticsAddScript("https://polyfill-fastly.io/v3/polyfill.min.js?version=3.111.0&features=Symbol%2CPromise&callback=rudderAnalyticsMount"):window.rudderAnalyticsMount()
+  ;var loadOptions={useBeacon:true};rudderanalytics.load("34ndFYFhQmaiPjSdHmsHucwPRtV","https://bitboundaipthl.dataplane.rudderstack.com",loadOptions)}}}();
+
+  // O SDK v3 removeu a chamada implícita de page que existia nas versões anteriores:
+  // sem esta linha, nenhum page view é enviado ao dataplane.
+  rudderanalytics.page();
+</script>
+
+<!-- TODO RASTREIO: cole aqui o snippet do Google Tag Manager (head) -->
+<!-- TODO RASTREIO: cole aqui o snippet do Meta Pixel (head). Os CTAs já expõem data-cta e data-cta-location para disparar eventos sem tocar no HTML. -->
+
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TODO RASTREIO: cole aqui o <noscript> do Google Tag Manager (body) -->
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#hero" data-cta="logo" data-cta-location="header"><img src="assets/mia-logo-branco.png" alt="Mia" width="782" height="318"></a>
+    <nav class="nav-links" aria-label="Seções da página">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#quanto-custa">Quanto custa</a>
+      <a href="#pra-quem-e">Pra quem é</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+    <div class="site-header__actions">
+      <!-- CONFIRMAR: URL de login deduzida a partir de /auth/sign-up, não foi possível validar -->
+      <a class="link-quiet" href="https://web.miaapp.com.br/auth/sign-in" id="cta-entrar-header" data-cta="entrar" data-cta-location="header">Entrar</a>
+      <a class="btn btn--coral btn--sm" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-header" data-cta="criar-link" data-cta-location="header">Criar meu link</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <span class="badge"><span class="badge__dot" aria-hidden="true"></span>SEM MENSALIDADE</span>
+      <h1 class="hero__title">Seu cliente marca o horário e paga <span class="hl">sozinho</span>.</h1>
+      <p class="hero__sub">Você manda um link. Ele escolhe o serviço, o dia e o horário, paga na hora e o dinheiro cai direto na sua conta.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--coral btn--lg" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-hero" data-cta="criar-link" data-cta-location="hero">Criar meu link grátis</a>
+        <a class="btn btn--ghost btn--lg" href="#como-funciona" id="cta-como-funciona-hero" data-cta="ver-como-funciona" data-cta-location="hero">Ver como funciona</a>
+      </div>
+      <ul class="chips">
+        <li class="chip chip--green">Pix sem taxa</li>
+        <li class="chip chip--blue">Sem tempo mínimo</li>
+        <li class="chip chip--neutral">Cliente não baixa app</li>
+      </ul>
+    </div>
+
+    <div class="hero__mock">
+      <div class="phone phone--wa" aria-hidden="true">
+        <div class="wa__top">
+          <span class="wa__clock">9:41</span>
+          <span class="wa__avatar"></span>
+          <span class="wa__name">Bianca Torres</span>
+        </div>
+        <div class="wa__thread">
+          <div class="wa__msg wa__msg--in">Oi! Tem horário na quinta?</div>
+          <div class="wa__msg wa__msg--out">
+            <div class="wa__preview">
+              <div class="wa__preview-title">Carla Nunes · Cílios</div>
+              <div class="wa__preview-url">mia.app/carlanunes</div>
+            </div>
+            <div class="wa__msg-text">Escolhe aqui o horário que ficar melhor pra você</div>
+          </div>
+          <div class="wa__msg wa__msg--in">Peguei 15h e já paguei no Pix</div>
+          <div class="wa__receipt"><span class="wa__receipt-dot"></span>R$ 120,00 na sua conta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section" id="como-funciona">
+  <div class="container">
+    <div class="steps-section__head">
+      <p class="eyebrow eyebrow--blue">COMO FUNCIONA</p>
+      <h2 class="h2 h2--lg">São três passos. Nenhum deles é seu.</h2>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step__head">
+          <span class="step__num step__num--blue">1</span>
+          <h3 class="step__title">Você manda seu link</h3>
+        </div>
+        <p class="step__text">No WhatsApp, no status, na bio do Instagram. Onde você já fala com seu cliente.</p>
+        <div class="step__figure">
+          <div class="link-box" aria-hidden="true">
+            <div class="link-box__info">
+              <div class="link-box__label">SEU LINK</div>
+              <div class="link-box__url">mia.app/carlanunes</div>
+            </div>
+            <span class="link-box__btn">Copiar</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step__head">
+          <span class="step__num step__num--blue">2</span>
+          <h3 class="step__title">Ele escolhe e paga</h3>
+        </div>
+        <p class="step__text">Vê seus serviços, escolhe o dia e o horário livre e paga ali mesmo. Sem baixar app, sem te chamar.</p>
+        <div class="step__figure step__figure--center">
+          <div class="phone phone--booking" aria-hidden="true">
+            <div class="bk__top">
+              <span class="bk__avatar"></span>
+              <div>
+                <div class="bk__name">Carla Nunes</div>
+                <div class="bk__role">Design de cílios</div>
+              </div>
+            </div>
+            <div class="bk__body">
+              <div class="bk__service bk__service--on">
+                <div>
+                  <div class="bk__service-name">Extensão de cílios</div>
+                  <div class="bk__service-meta">1h30</div>
+                </div>
+                <div class="bk__service-price">R$ 120</div>
+              </div>
+              <div class="bk__label">QUINTA, 12 DE MARÇO</div>
+              <div class="bk__slots">
+                <span class="bk__slot">09:00</span>
+                <span class="bk__slot">10:30</span>
+                <span class="bk__slot bk__slot--on-dark">15:00</span>
+                <span class="bk__slot">16:30</span>
+                <span class="bk__slot">18:00</span>
+                <span class="bk__slot bk__slot--off">19:30</span>
+              </div>
+              <div class="bk__pay">Pagar R$ 120 no Pix</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="step step--dark">
+        <div class="step__head">
+          <span class="step__num step__num--green">3</span>
+          <h3 class="step__title"><span class="only-mobile">O Pix cai direto na sua conta</span><span class="only-desktop">O Pix cai direto na conta</span></h3>
+        </div>
+        <p class="step__text">O que ele pagar no Pix cai na sua conta do banco, pela sua chave, na hora e sem taxa nenhuma.</p>
+        <div class="step__figure">
+          <div class="receipt" aria-hidden="true">
+            <span class="receipt__icon">R$</span>
+            <div class="receipt__info">
+              <div class="receipt__title">Pix recebido · R$ 120,00</div>
+              <div class="receipt__meta">Seu banco · agora mesmo</div>
+            </div>
+            <span class="receipt__fee">Taxa R$ 0</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="alert-banner">
+      <span class="alert-banner__icon" aria-hidden="true">!</span>
+      <p>Você recebe o aviso na hora que ele agenda e seu cliente recebe 2 lembretes até o dia do atendimento.</p>
+    </div>
+  </div>
+</section>
+
+<section class="client-section">
+  <div class="container client-section__inner">
+    <div class="client-section__head">
+      <p class="eyebrow eyebrow--deep">O QUE APARECE PRO SEU CLIENTE</p>
+      <h2 class="h2 h2--lg">Isso é o que ele vê quando clica no seu link.</h2>
+      <p class="client-section__sub"><span class="only-mobile">Seu perfil, seus serviços, seus dias e seus horários livres. Ele resolve tudo sozinho, sem te chamar.</span><span class="only-desktop">Seu perfil, seus serviços com preço e duração, seus dias e seus horários livres. Ele resolve tudo sozinho, sem te chamar.</span></p>
+    </div>
+
+    <div class="client-section__mock">
+      <div class="phone phone--client" aria-hidden="true">
+        <div class="cl__top">
+          <span class="cl__avatar"></span>
+          <div>
+            <div class="cl__name">Carla Nunes</div>
+            <div class="cl__role">Design de cílios · Moema</div>
+          </div>
+        </div>
+        <div class="cl__body">
+          <div class="cl__label">SERVIÇOS</div>
+          <div class="cl__services">
+            <div class="cl__service cl__service--on">
+              <div>
+                <div class="cl__service-name">Extensão de cílios</div>
+                <div class="cl__service-meta">1h30 · no estúdio</div>
+              </div>
+              <div class="cl__service-price">R$ 120</div>
+            </div>
+            <div class="cl__service">
+              <div>
+                <div class="cl__service-name">Manutenção</div>
+                <div class="cl__service-meta">1h · no estúdio</div>
+              </div>
+              <div class="cl__service-price">R$ 80</div>
+            </div>
+          </div>
+          <div class="cl__label cl__label--spaced">MARÇO</div>
+          <div class="cl__days">
+            <div class="cl__day"><span class="cl__day-name">ter</span><span class="cl__day-num">10</span></div>
+            <div class="cl__day cl__day--on"><span class="cl__day-name">qui</span><span class="cl__day-num">12</span></div>
+            <div class="cl__day"><span class="cl__day-name">sex</span><span class="cl__day-num">13</span></div>
+            <div class="cl__day"><span class="cl__day-name">sáb</span><span class="cl__day-num">14</span></div>
+          </div>
+          <div class="cl__slots">
+            <span class="cl__slot">09:00</span>
+            <span class="cl__slot">10:30</span>
+            <span class="cl__slot cl__slot--on">15:00</span>
+          </div>
+          <div class="cl__pay">Pagar R$ 120 no Pix</div>
+        </div>
+      </div>
+    </div>
+
+    <ol class="client-flow">
+      <li class="flow-card"><span class="flow-card__num">1</span><span class="flow-card__text">Escolhe o serviço</span></li>
+      <li class="flow-card"><span class="flow-card__num">2</span><span class="flow-card__text">Escolhe o dia e a hora</span></li>
+      <li class="flow-card"><span class="flow-card__num">3</span><span class="flow-card__text">Paga na hora</span></li>
+      <li class="flow-card"><span class="flow-card__num">4</span><span class="flow-card__text">Recebe o lembrete</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="mia-is">
+  <div class="container mia-is__inner">
+    <div class="mia-is__head">
+      <p class="eyebrow eyebrow--coral">O QUE A MIA É</p>
+      <h2 class="h2">A Mia não fala com seu cliente. Ela organiza.</h2>
+      <p class="mia-is__sub">Você conta como seu negócio funciona e ela dá conta do resto. Quem conversa com seu cliente continua sendo você.</p>
+    </div>
+    <div class="mia-is__cards">
+      <div class="card-no">
+        <p class="card-no__label">NÃO É</p>
+        <ul>
+          <li>Robô que conversa no seu lugar</li>
+          <li>Atendimento de inteligência artificial</li>
+        </ul>
+      </div>
+      <div class="card-yes">
+        <p class="card-yes__label">É</p>
+        <ul>
+          <li>Um sistema que você alimenta uma vez</li>
+          <li>Onde seu cliente agenda, remarca e paga</li>
+          <li>Quem manda os lembretes de horário</li>
+        </ul>
+      </div>
+      <p class="card-browser">Não precisa baixar app, acesse direto pelo navegador.</p>
+    </div>
+  </div>
+</section>
+
+<section class="setup">
+  <div class="container setup__inner">
+    <div class="setup__head">
+      <p class="eyebrow eyebrow--amber">ANTES DE MANDAR O LINK</p>
+      <h2 class="h2">Pra montar essa tela, a Mia precisa saber como você trabalha.</h2>
+      <p class="setup__sub">Configurar é isso: contar pra Mia como seu negócio funciona. Nada ali é burocracia.</p>
+    </div>
+
+    <ol class="setup__steps">
+      <li class="setup-step">
+        <span class="setup-step__num">1</span>
+        <div>
+          <div class="setup-step__title">Cria sua conta</div>
+          <div class="setup-step__text">Gratuito. Use à vontade, sem burocracia</div>
+        </div>
+      </li>
+      <li class="setup-step">
+        <span class="setup-step__num">2</span>
+        <div>
+          <div class="setup-step__title">Coloca sua chave Pix</div>
+          <div class="setup-step__text">A mesma que você já usa no banco</div>
+        </div>
+      </li>
+      <li class="setup-step">
+        <span class="setup-step__num">3</span>
+        <div>
+          <div class="setup-step__title">Conta como você trabalha</div>
+          <div class="setup-step__text">Seus serviços, horários e valores. Aí seu link fica no ar.</div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="setup__fields">
+      <h3 class="setup__fields-title">Cada informação que ela pede é pra quê:</h3>
+      <div class="field-grid">
+        <div class="field-card"><div class="field-card__title">Nome do serviço</div><div class="field-card__text">é o que seu cliente lê e escolhe</div></div>
+        <div class="field-card"><div class="field-card__title">Descrição</div><div class="field-card__text">evita a pergunta “o que está incluso?”</div></div>
+        <div class="field-card"><div class="field-card__title">Preço</div><div class="field-card__text">é o que ele paga, sem você ter que cobrar</div></div>
+        <div class="field-card"><div class="field-card__title">Duração</div><div class="field-card__text">a Mia sabe quanto tempo bloquear na sua agenda</div></div>
+        <div class="field-card"><div class="field-card__title">Intervalo entre atendimentos</div><div class="field-card__text">garante seu tempo entre um cliente e outro</div></div>
+        <div class="field-card"><div class="field-card__title">Presencial, on-line ou em casa</div><div class="field-card__text">ele já sabe onde vai te encontrar</div></div>
+        <div class="field-card"><div class="field-card__title">Visível ou escondido</div><div class="field-card__text">você decide quais serviços aparecem</div></div>
+      </div>
+    </div>
+
+    <div class="yellow-box setup__callout">
+      <p class="yellow-box__title">Você faz isso uma vez. Depois é só atender.</p>
+      <p class="yellow-box__text">O primeiro serviço leva uns 3 minutos. Dá pra começar com um só e ir adicionando depois.</p>
+    </div>
+  </div>
+</section>
+
+<section class="routine">
+  <div class="container routine__inner">
+    <div class="routine__head">
+      <p class="eyebrow eyebrow--salmon">O QUE SAI DA SUA ROTINA</p>
+      <h2 class="h2 h2--light">Seis coisas que você não precisa mais fazer.</h2>
+    </div>
+
+    <ul class="routine__list">
+      <li class="routine-item"><span class="routine-item__x" aria-hidden="true">×</span><span class="routine-item__text">Responder “tem horário?” o dia todo</span></li>
+      <li class="routine-item"><span class="routine-item__x" aria-hidden="true">×</span><span class="routine-item__text">Olhar a agenda pra ver o que está livre</span></li>
+      <li class="routine-item"><span class="routine-item__x" aria-hidden="true">×</span><span class="routine-item__text">Remarcar cliente na mão</span></li>
+      <li class="routine-item"><span class="routine-item__x" aria-hidden="true">×</span><span class="routine-item__text">Cobrar e pedir comprovante</span></li>
+      <li class="routine-item"><span class="routine-item__x" aria-hidden="true">×</span><span class="routine-item__text">Ficar olhando a conta pra ver se caiu</span></li>
+      <li class="routine-item"><span class="routine-item__x" aria-hidden="true">×</span><span class="routine-item__text">Lembrar o cliente que ele tem horário</span></li>
+    </ul>
+
+    <div class="yellow-box routine__callout">
+      <p class="yellow-box__title">A Mia faz tudo isso enquanto você atende.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="quanto-custa">
+  <div class="container pricing__inner">
+    <div class="pricing__head">
+      <p class="eyebrow eyebrow--blue">QUANTO CUSTA</p>
+      <p class="price">R$ 0<span class="price__period"> por mês</span></p>
+      <p class="pricing__sub">A Mia não tem mensalidade. O único custo aparece se seu cliente escolher pagar no cartão de crédito.</p>
+    </div>
+
+    <div class="pricing__plans">
+      <article class="plan plan--pix">
+        <div class="plan__head">
+          <h3 class="plan__name">Pix</h3>
+          <span class="tag tag--green">SEM TAXA</span>
+        </div>
+        <p class="plan__text plan__text--green">Cai direto na sua conta, na hora, pela sua chave. Você recebe o valor cheio.</p>
+      </article>
+
+      <article class="plan">
+        <div class="plan__head">
+          <h3 class="plan__name">Cartão de crédito</h3>
+          <span class="tag tag--grey">OPCIONAL</span>
+        </div>
+        <p class="plan__text">Você só habilita se quiser oferecer essa opção pro seu cliente.</p>
+        <dl class="fees">
+          <div class="fee"><dt>Por atendimento pago no cartão</dt><dd>3,89% + R$ 0,99</dd></div>
+          <div class="fee"><dt>Pra transferir esse valor pro seu banco</dt><dd>R$ 3,87</dd></div>
+          <div class="fee"><dt>O dinheiro do cartão chega em</dt><dd>31 dias</dd></div>
+        </dl>
+        <p class="plan__note">Num atendimento de R$ 100 pago no cartão, a taxa dá menos de R$ 5.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="free">
+  <div class="container free__inner">
+    <div class="free__head">
+      <p class="eyebrow eyebrow--sky">ENTRA E USA</p>
+      <h2 class="h2 h2--light">Conhece a Mia hoje, no seu ritmo.</h2>
+    </div>
+
+    <ul class="free__list">
+      <li class="check-item"><span class="check-item__mark" aria-hidden="true">✓</span>Gratuito desde o primeiro dia</li>
+      <li class="check-item"><span class="check-item__mark" aria-hidden="true">✓</span>Sem tempo mínimo: usa à vontade</li>
+      <li class="check-item"><span class="check-item__mark" aria-hidden="true">✓</span>Sem burocracia pra começar</li>
+    </ul>
+
+    <div class="free__cta">
+      <a class="btn btn--coral btn--lg" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-entra-e-usa" data-cta="criar-link" data-cta-location="entra-e-usa">Criar meu link grátis</a>
+    </div>
+
+    <p class="free__note">Se um dia quiser parar, você para: não tem multa nem ligação de cancelamento. O único custo que pode existir é a taxa do cartão de crédito.</p>
+  </div>
+</section>
+
+<section class="audience" id="pra-quem-e">
+  <div class="container">
+    <p class="eyebrow eyebrow--blue">PRA QUEM É</p>
+    <h2 class="h2 audience__title">Se você trabalha com hora marcada, a Mia é essencial.</h2>
+    <ul class="audience__grid">
+      <li class="audience-card audience-card--cream">Beleza e estética</li>
+      <li class="audience-card audience-card--sky">Saúde e terapias</li>
+      <li class="audience-card audience-card--mint">Aulas particulares</li>
+      <li class="audience-card audience-card--blush">Serviços em domicílio</li>
+      <li class="audience-card audience-card--grey audience-card--wide"><span class="only-mobile">Qualquer profissional autônomo</span><span class="only-desktop">Profissionais autônomos</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Conversas ilustrativas, não depoimentos: sem clientes reais, nada aqui afirma autoria.
+     Quando houver prints reais com autorização, trocar por <img> e retomar o título "Quem já usa". -->
+<section class="social">
+  <div class="container social__head">
+    <p class="eyebrow eyebrow--amber">COMO FICA NO WHATSAPP</p>
+    <h2 class="h2 social__title">Manda o link uma vez e vê a diferença.</h2>
+    <p class="social__sub">Exemplos ilustrativos da conversa que deixa de existir quando o link resolve por você.</p>
+  </div>
+  <div class="social__scroller">
+    <figure class="testi">
+      <div class="chat" aria-hidden="true">
+        <div class="chat__top"><span class="chat__avatar chat__avatar--juliana"></span><span class="chat__name">Juliana</span></div>
+        <div class="chat__thread">
+          <div class="chat__msg chat__msg--in">Oi! Tem horário essa semana?</div>
+          <div class="chat__msg chat__msg--out">
+            <div class="chat__preview">
+              <div class="chat__preview-title">Rafael · Terapia</div>
+              <div class="chat__preview-url">mia.app/rafael</div>
+            </div>
+            <div class="chat__msg-text">Escolhe aí o que ficar melhor pra você</div>
+          </div>
+          <div class="chat__msg chat__msg--in">Marquei quinta 14h e já paguei</div>
+          <div class="chat__receipt"><span class="chat__receipt-dot"></span>R$ 180,00 na sua conta</div>
+        </div>
+      </div>
+      <figcaption><span class="testi__name">Terapia</span><span class="testi__role">conversa ilustrativa</span></figcaption>
+    </figure>
+    <figure class="testi">
+      <div class="chat" aria-hidden="true">
+        <div class="chat__top"><span class="chat__avatar chat__avatar--patricia"></span><span class="chat__name">Patrícia</span></div>
+        <div class="chat__thread">
+          <div class="chat__msg chat__msg--in">Tem horário pra limpeza de pele?</div>
+          <div class="chat__msg chat__msg--out">
+            <div class="chat__preview">
+              <div class="chat__preview-title">Camila · Estética</div>
+              <div class="chat__preview-url">mia.app/camila</div>
+            </div>
+            <div class="chat__msg-text">Aqui aparece tudo que tenho livre</div>
+          </div>
+          <div class="chat__msg chat__msg--in">Peguei sexta 10h, paguei no Pix</div>
+          <div class="chat__receipt"><span class="chat__receipt-dot"></span>R$ 150,00 na sua conta</div>
+        </div>
+      </div>
+      <figcaption><span class="testi__name">Estética</span><span class="testi__role">conversa ilustrativa</span></figcaption>
+    </figure>
+    <figure class="testi">
+      <div class="chat" aria-hidden="true">
+        <div class="chat__top"><span class="chat__avatar chat__avatar--marcos"></span><span class="chat__name">Marcos</span></div>
+        <div class="chat__thread">
+          <div class="chat__msg chat__msg--in">Fala! Dá pra cortar hoje ainda?</div>
+          <div class="chat__msg chat__msg--out">
+            <div class="chat__preview">
+              <div class="chat__preview-title">Diego · Barbearia</div>
+              <div class="chat__preview-url">mia.app/diego</div>
+            </div>
+            <div class="chat__msg-text">Vê os horários que sobraram</div>
+          </div>
+          <div class="chat__msg chat__msg--in">Fechei 18h30 e já paguei</div>
+          <div class="chat__receipt"><span class="chat__receipt-dot"></span>R$ 45,00 na sua conta</div>
+        </div>
+      </div>
+      <figcaption><span class="testi__name">Barbearia</span><span class="testi__role">conversa ilustrativa</span></figcaption>
+    </figure>
+  </div>
+  <div class="container"><p class="social__hint only-mobile">ARRASTA PARA O LADO</p></div>
+</section>
+
+<section class="faq" id="perguntas">
+  <div class="container faq__inner">
+    <h2 class="h2 faq__title">Perguntas que todo mundo faz</h2>
+    <div class="faq__list">
+      <details>
+        <summary>A Mia conversa com meu cliente?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Não. A Mia não é robô de conversa nem atendimento de inteligência artificial. Depois que você conta como seu negócio funciona, ela deixa seu cliente agendar, remarcar, pagar e receber os lembretes pelo seu link. Falar com ele continua sendo com você.</p>
+      </details>
+      <details>
+        <summary>Preciso configurar muita coisa?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Pra começar, um serviço já basta: nome, preço, duração e seus horários. Cada campo é uma coisa que seu cliente vê na hora de marcar, ou uma regra pra Mia não marcar em cima do seu outro atendimento. Você faz uma vez e não mexe mais.</p>
+      </details>
+      <details>
+        <summary>Meu cliente precisa baixar aplicativo?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Não. Ele abre o link, escolhe o horário e paga pelo navegador do celular.</p>
+      </details>
+      <details>
+        <summary>O dinheiro passa por vocês?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>No Pix, não. Seu cliente paga na sua chave Pix e o valor cai direto na sua conta do banco.</p>
+      </details>
+      <details>
+        <summary>Tem mensalidade?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Não. A Mia não cobra nada pra você usar. O único custo que pode existir é a taxa do cartão de crédito: 3,89% + R$ 0,99 por atendimento pago no cartão, e R$ 3,87 pra transferir esse valor pro seu banco. No Pix não tem taxa nenhuma.</p>
+      </details>
+      <details>
+        <summary>E se eu quiser aceitar cartão?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Dá pra habilitar quando quiser. Você preenche alguns dados a mais uma vez só e o cartão passa a aparecer como opção pro seu cliente. O valor pago no cartão chega 31 dias depois do atendimento; no Pix, na hora.</p>
+      </details>
+      <details>
+        <summary>O cliente pode remarcar sozinho?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Sim, pelo mesmo link. Você só recebe o aviso da mudança.</p>
+      </details>
+      <details>
+        <summary>Dá pra parar de usar quando eu quiser?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Sim. Não tem tempo mínimo nem vínculo: você para quando quiser e não paga nada pra sair.</p>
+      </details>
+      <details>
+        <summary>Vou perder o contato do meu cliente?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Não. A conversa continua sendo sua, no seu WhatsApp. A Mia só tira de você a parte chata.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 class="final-cta__title">Pegue seu link agora!</h2>
+    <p class="final-cta__sub">Leva uns 5 minutos e não custa nada.</p>
+    <div class="final-cta__actions">
+      <a class="btn btn--white btn--lg" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-final" data-cta="criar-link" data-cta-location="cta-final">Criar meu link grátis</a>
+      <a class="btn btn--outline-white btn--lg final-cta__whats" href="https://api.whatsapp.com/send/?phone=%2B5564999534103&amp;text=Oi%21+Quero+saber+mais+sobre+a+Mia.&amp;type=phone_number&amp;app_absent=0" id="cta-whatsapp-final" data-cta="whatsapp" data-cta-location="cta-final"><span class="only-mobile">Ou chama a gente no WhatsApp</span><span class="only-desktop">Falar no WhatsApp</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <span class="brand"><img src="assets/mia-logo-branco.png" alt="Mia" width="782" height="318"></span>
+    <nav class="site-footer__links" aria-label="Links institucionais">
+      <a href="https://miaapp.com.br/termos-de-uso-e-privacidade" target="_blank" rel="noopener" data-cta="termos" data-cta-location="footer"><span class="only-mobile">Termos</span><span class="only-desktop">Termos de uso</span></a>
+      <a href="https://miaapp.com.br/termos-de-uso-e-privacidade" target="_blank" rel="noopener" data-cta="privacidade" data-cta-location="footer">Privacidade</a>
+      <!-- Sem central de ajuda ainda: aponta para o WhatsApp do atendimento -->
+      <a href="https://api.whatsapp.com/send/?phone=%2B5564999534103&amp;text=Oi%21+Preciso+de+ajuda+com+a+Mia.&amp;type=phone_number&amp;app_absent=0" data-cta="ajuda" data-cta-location="footer">Ajuda</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://api.whatsapp.com/send/?phone=%2B5564999534103&amp;text=Oi%21+Quero+saber+mais+sobre+a+Mia.&amp;type=phone_number&amp;app_absent=0" id="cta-whatsapp-flutuante" data-cta="whatsapp" data-cta-location="botao-flutuante" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<div class="sticky-bar" data-sticky-cta>
+  <p class="sticky-bar__text">Grátis, sem mensalidade</p>
+  <a class="btn btn--coral btn--sm" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-sticky" data-cta="criar-link" data-cta-location="barra-fixa">Criar meu link</a>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
