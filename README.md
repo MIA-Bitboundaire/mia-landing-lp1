@@ -4,6 +4,7 @@ Site estático: HTML, CSS e um arquivo de JavaScript. **Sem build, sem dependên
 
 ```
 index.html      página completa
+termos-de-uso-e-privacidade.html  termos de uso e privacidade (servido em /termos-de-uso-e-privacidade)
 styles.css      estilos (mobile por padrão, desktop a partir de 1024px)
 script.js       barra fixa, carrossel das conversas e evento view_content
 assets/         logo (versão branca usada na página) e favicon
@@ -21,8 +22,9 @@ python3 -m http.server 8000
 
 Publicado no **GitHub Pages** deste repositório (branch `main`, raiz). Todo push na `main` republica sozinho, sem build.
 
-- Domínio: `lp1.miaapp.com.br`, definido pelo arquivo `CNAME` na raiz (não remover).
-- DNS: registro **CNAME** `lp1.miaapp.com.br` → `mia-bitboundaire.github.io` na zona Route 53 de `miaapp.com.br` (conta AWS de produção).
+- Domínio: `miaapp.com.br` (site principal), definido pelo arquivo `CNAME` na raiz (não remover). `www.miaapp.com.br` redireciona para ele pelo próprio GitHub Pages.
+- DNS na zona Route 53 de `miaapp.com.br` (conta AWS de produção): apex com registros **A** `185.199.108-111.153` e **AAAA** `2606:50c0:8000-8003::153`; **CNAME** `www` → `mia-bitboundaire.github.io`.
+- `lp1.miaapp.com.br`, onde a landing ficava antes, é atendido pelo repo `MIA-Bitboundaire/mia-landing-lp1-redirect`, que redireciona para `miaapp.com.br` mantendo caminho e query string.
 - HTTPS emitido e renovado pelo próprio GitHub Pages.
 - `.nojekyll` desliga o processamento Jekyll: os arquivos são servidos como estão.
 
@@ -52,6 +54,6 @@ O evento de cadastro/agendamento **não** é disparado aqui; ele acontece no dom
 
 - [ ] Confirmar a URL de login do botão "Entrar" (está como `https://web.miaapp.com.br/auth/sign-in`, deduzida a partir da URL de cadastro — há um comentário `CONFIRMAR` no HTML).
 - [ ] URL da central de ajuda (hoje o link "Ajuda" aponta para o WhatsApp do atendimento).
-- [ ] `og:image` (o `og:url` já aponta para `https://lp1.miaapp.com.br/`).
+- [ ] `og:image` (o `og:url` já aponta para `https://miaapp.com.br/`).
 - [ ] Confirmar que o pixel já instalado em `web.miaapp.com.br` emite `registration_completed` ao fim do cadastro (carregar o pixel não basta: o evento é chamada explícita) e que o `oppref` da landing chega até lá.
 - [ ] Seção "Como fica no WhatsApp": as conversas são **ilustrativas** e estão sinalizadas como tal. Com prints reais e autorização por escrito, trocar por imagens (tarjando telefone e foto) e retomar o título "Quem já usa".

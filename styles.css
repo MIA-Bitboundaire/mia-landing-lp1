@@ -1150,3 +1150,15 @@ body.bar-on .wa-float { bottom: 86px; }
   .wa-float svg { width: 32px; height: 32px; }
   body.bar-on .wa-float { bottom: 24px; }
 }
+
+.legal { min-height: 70vh; background: #fff; }
+.legal__inner { max-width: 760px; padding-block: 40px 56px; }
+.legal__title { margin: 0 0 24px; font: 800 30px/1.1 Archivo, sans-serif; color: var(--navy); letter-spacing: -.03em; }
+.legal h2 { margin: 28px 0 12px; font: 700 20px/1.2 Archivo, sans-serif; color: var(--navy); }
+.legal p { margin: 0 0 16px; font: 400 15.5px/1.6 Archivo, sans-serif; color: var(--muted); }
+.legal a { color: var(--blue-ink); }
+
+@media (min-width: 1024px) {
+  .legal__inner { padding-block: 64px 88px; }
+  .legal__title { font-size: 40px; }
+}
