@@ -19,10 +19,10 @@
 
   const externalReferrer = () => {
     try {
-      const { hostname } = new URL(document.referrer);
+      const { hostname, origin } = new URL(document.referrer);
       const isOwnDomain =
         hostname === OWN_DOMAIN || hostname.endsWith(`.${OWN_DOMAIN}`);
-      return isOwnDomain ? undefined : document.referrer;
+      return isOwnDomain || origin === "null" ? undefined : origin;
     } catch {
       return undefined;
     }
