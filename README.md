@@ -7,6 +7,7 @@ index.html      página completa
 termos-de-uso-e-privacidade.html  termos de uso e privacidade (servido em /termos-de-uso-e-privacidade)
 styles.css      estilos (mobile por padrão, desktop a partir de 1024px)
 script.js       barra fixa, carrossel das conversas e evento view_content
+attribution.js  guarda UTMs, gclid, fbclid e referrer do primeiro acesso e repassa nos links para o web.miaapp.com.br
 assets/         logo (versão branca usada na página) e favicon
 ```
 
