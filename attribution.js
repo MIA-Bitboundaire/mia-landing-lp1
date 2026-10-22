@@ -21,7 +21,9 @@
     try {
       const { hostname, origin } = new URL(document.referrer);
       const isOwnDomain =
-        hostname === OWN_DOMAIN || hostname.endsWith(`.${OWN_DOMAIN}`);
+        hostname === location.hostname ||
+        hostname === OWN_DOMAIN ||
+        hostname.endsWith(`.${OWN_DOMAIN}`);
       return isOwnDomain || origin === "null" ? undefined : origin;
     } catch {
       return undefined;
@@ -71,15 +73,25 @@
     for (const [param, value] of Object.entries(attribution)) {
       if (!url.searchParams.has(param)) url.searchParams.set(param, value);
     }
-    link.href = url.toString();
+    // Só reescreve quando muda: o MutationObserver abaixo vê cada escrita no href.
+    if (url.href !== link.href) link.href = url.href;
   };
+
+  const decorateAll = () => document.querySelectorAll("a[href]").forEach(decorate);
 
   const decorateFromEvent = (event) => {
     const link = event.target.closest?.("a[href]");
     if (link) decorate(link);
   };
 
-  document.querySelectorAll("a[href]").forEach(decorate);
+  decorateAll();
+  // Landings em React (Lovable) criam os botões depois que este script roda.
+  new MutationObserver(decorateAll).observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["href"],
+  });
   document.addEventListener("click", decorateFromEvent, true);
   document.addEventListener("auxclick", decorateFromEvent, true);
 })();
