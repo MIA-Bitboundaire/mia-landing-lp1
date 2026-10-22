@@ -28,6 +28,7 @@ Publicado no **GitHub Pages** deste repositório (branch `main`, raiz). Todo pus
 - `lp1.miaapp.com.br`, onde a landing ficava antes, é atendido pelo repo `MIA-Bitboundaire/mia-landing-lp1-redirect`, que redireciona para `miaapp.com.br` mantendo caminho e query string.
 - HTTPS emitido e renovado pelo próprio GitHub Pages.
 - `.nojekyll` desliga o processamento Jekyll: os arquivos são servidos como estão.
+- As outras landings (`lpX.miaapp.com.br`, Lovable) carregam o `attribution.js` direto de `https://miaapp.com.br/attribution.js`: não renomear nem mover, e qualquer mudança nele vale para todas.
 
 Para trocar de host, qualquer serviço de site estático serve o repositório direto, com build vazio e diretório de saída `.`.
 
