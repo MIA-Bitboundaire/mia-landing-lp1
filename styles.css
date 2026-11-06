@@ -587,6 +587,8 @@ img { max-width: 100%; display: block; }
 .tag--grey { background: var(--line-soft); color: var(--muted-2); }
 .plan__text { margin-top: 8px; font: 400 14.5px/1.45 Archivo, sans-serif; color: var(--muted-2); }
 .plan__text--green { color: #0C6438; }
+.plan__subname { margin-top: 14px; font: 800 15px Archivo, sans-serif; color: var(--navy); }
+.pricing--condicoes .pricing__inner { padding-top: 0; }
 
 .fees { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
 .fee {
