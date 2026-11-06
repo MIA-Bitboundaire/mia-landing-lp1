@@ -1,0 +1,286 @@
+/* =========================================================
+   VSL da hero · variante B do teste A/B (lp4.miaapp.com.br)
+   Tudo o que não existe na página A está neste arquivo.
+   O que aparece em cada momento depende de data-fase,
+   que o vsl.js troca: capa, previa, assistindo, pausado, fim, erro.
+   ========================================================= */
+
+/* ---------- posição na hero ---------- */
+
+/* Ordem da VSL: título, vídeo, texto e só então os botões, como numa página de VSL.
+   O .hero__copy "some" para os filhos virarem itens da coluna e o vídeo entrar no meio. */
+.hero--vsl .hero__inner { display: flex; flex-direction: column; }
+.hero--vsl .hero__copy { display: contents; }
+.hero--vsl .badge { align-self: flex-start; order: 1; }
+.hero--vsl .hero__title { order: 2; }
+.hero--vsl .vsl { order: 3; margin-top: 22px; }
+.hero--vsl .hero__sub { order: 4; margin-top: 22px; }
+.hero--vsl .hero__ctas { order: 5; }
+
+/* ---------- player ---------- */
+
+.vsl {
+  --vsl-proporcao: 16 / 9; /* trocado pelo vsl.js assim que o vídeo informa o tamanho real */
+  position: relative;
+  width: 100%;
+}
+/* vídeo em pé (9:16, 4:5): não deixa a hero crescer demais */
+.vsl--retrato { max-width: min(340px, 34vh); align-self: center; } /* 9:16 fica com ~60% da altura da tela */
+
+.vsl svg { width: 1em; height: 1em; fill: currentColor; display: block; }
+
+.vsl__tela {
+  position: relative;
+  aspect-ratio: var(--vsl-proporcao);
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--navy-deep);
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .45);
+}
+
+.vsl__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--navy-deep);
+}
+
+.vsl__camada {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+}
+.vsl[data-fase="capa"] .vsl__camada--capa,
+.vsl[data-fase="previa"] .vsl__camada--previa,
+.vsl[data-fase="assistindo"] .vsl__camada--toque,
+.vsl[data-fase="pausado"] .vsl__camada--toque,
+.vsl[data-fase="erro"] .vsl__camada--erro { display: grid; }
+.vsl[data-fase="fim"] .vsl__camada--fim { display: flex; }
+
+/* capa: botão de play */
+.vsl__camada--capa { background: radial-gradient(60% 70% at 50% 50%, rgba(0, 46, 67, .1), rgba(0, 46, 67, .55)); }
+
+.vsl__play {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--coral);
+  font-size: 30px;
+  box-shadow: 0 12px 30px rgba(199, 40, 40, .5);
+  transition: transform .25s ease, background-color .2s ease;
+}
+.vsl__play svg { margin-left: 4px; }
+.vsl__play::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--coral-soft);
+  animation: vsl-anel 2.2s ease-out infinite;
+}
+.vsl__camada--capa:hover .vsl__play { transform: scale(1.07); background: var(--coral-deep); }
+
+@keyframes vsl-anel {
+  from { transform: scale(1); opacity: .9; }
+  to { transform: scale(1.6); opacity: 0; }
+}
+
+/* prévia sem som: o vídeo aparece por inteiro e limpo, com uma faixa pequena no canto */
+.vsl__camada--previa {
+  background: transparent;
+  place-items: end start;
+  padding: 0 0 14px 14px;
+}
+
+.vsl__aviso {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px 7px 10px;
+  border-radius: 999px;
+  background: rgba(199, 40, 40, .92);
+  border: 1px solid rgba(255, 255, 255, .22);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+  text-align: left;
+  animation: vsl-chama 1.6s ease-in-out infinite;
+}
+.vsl__aviso-icone {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  font-size: 18px;
+}
+.vsl__aviso-texto { display: flex; align-items: center; line-height: 1.2; }
+.vsl__aviso-texto b { font: 700 13px Archivo, sans-serif; white-space: nowrap; }
+
+@keyframes vsl-chama {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* assistindo: o toque no vídeo pausa; pausado mostra "Continuar assistindo" */
+.vsl__camada--toque { bottom: 46px; height: auto; }
+.vsl__continuar {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  background: rgba(199, 40, 40, .94);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+  font: 700 15px Archivo, sans-serif;
+}
+.vsl[data-fase="pausado"] .vsl__continuar { display: inline-flex; }
+
+/* fim */
+.vsl__camada--fim {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background: rgba(0, 46, 67, .78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: default;
+}
+.vsl__de-novo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, .85);
+  font: 600 14px Archivo, sans-serif;
+  cursor: pointer;
+}
+.vsl__de-novo:hover { color: #fff; background: rgba(255, 255, 255, .08); }
+
+/* erro: o arquivo do vídeo não carregou */
+.vsl__camada--erro {
+  padding: 16px;
+  text-align: center;
+  font: 600 14px Archivo, sans-serif;
+  color: var(--muted-light);
+  cursor: default;
+}
+
+/* aviso de retomada */
+.vsl__retomado {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  display: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(0, 46, 67, .85);
+  color: #fff;
+  font: 600 13px Archivo, sans-serif;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.vsl__retomado.is-visible { display: block; animation: vsl-some 3.5s ease forwards; }
+
+@keyframes vsl-some {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* barra de controles: sem linha do tempo clicável, então não dá para pular */
+.vsl__barra {
+  position: absolute;
+  inset: auto 0 0;
+  display: none;
+  background: linear-gradient(0deg, rgba(0, 20, 30, .75), transparent);
+}
+.vsl[data-fase="assistindo"] .vsl__barra,
+.vsl[data-fase="pausado"] .vsl__barra { display: block; }
+
+.vsl__botoes { display: flex; align-items: center; padding: 6px 6px 2px; }
+.vsl__botoes button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.vsl__botoes button:hover { background: rgba(255, 255, 255, .12); }
+.vsl__espaco { flex: 1; }
+
+.vsl__icone-tocar, .vsl__icone-mudo { display: none; }
+.vsl[data-fase="pausado"] .vsl__icone-pausa { display: none; }
+.vsl[data-fase="pausado"] .vsl__icone-tocar { display: block; }
+.vsl[data-mudo] .vsl__icone-som { display: none; }
+.vsl[data-mudo] .vsl__icone-mudo { display: block; }
+
+.vsl__progresso { display: block; height: 4px; background: rgba(255, 255, 255, .22); }
+.vsl__progresso span {
+  display: block;
+  height: 100%;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s linear;
+}
+
+/* foco: enquanto a pessoa assiste com som, o resto da página escurece */
+.vsl-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 20, 30, .82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: vsl-aparece .4s ease;
+}
+.vsl--foco { z-index: 41; }
+
+@keyframes vsl-aparece {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vsl__play::before, .vsl__aviso, .vsl-fundo { animation: none; }
+}
+
+/* ---------- desktop ---------- */
+
+@media (min-width: 1024px) {
+  /* mantém a ordem da VSL (título, vídeo, texto, botões) também no desktop,
+     com o vídeo limitado para não ocupar a tela inteira */
+  .hero--vsl .vsl { max-width: 760px; }
+  .vsl--retrato { max-width: 320px; }
+
+  .vsl__tela { border-radius: 22px; }
+  .vsl__play { width: 92px; height: 92px; font-size: 34px; }
+  .vsl__camada--previa { padding: 0 0 18px 18px; }
+  .vsl__aviso { gap: 9px; padding: 8px 15px 8px 12px; }
+  .vsl__aviso-icone { width: 20px; height: 20px; font-size: 20px; }
+  .vsl__aviso-texto b { font-size: 14px; }
+}

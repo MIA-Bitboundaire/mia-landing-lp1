@@ -4,10 +4,19 @@ document.addEventListener("click", (event) => {
   const link = event.target.closest("a[href]");
   if (!link || !link.hostname || link.hostname === window.location.hostname) return;
 
+  // Mesmo payload da página principal (miaapp.com.br), para comparar o A/B.
+  const label = link.textContent.trim().replace(/\s+/g, " ") || link.getAttribute("aria-label") || undefined;
   window.rudderanalytics?.track("view_content", {
-    button: link.dataset.cta,
-    button_location: link.dataset.ctaLocation,
-    destination_url: link.href,
+    content_name: label,
+    content_type: "cta",
+    location: link.dataset.ctaLocation,
+    destination: link.href,
+  });
+  window.oaiq?.("measure", "contents_viewed", {
+    type: "contents",
+    amount: 0,
+    currency: "BRL",
+    contents: [{ id: link.href, name: label, content_type: "cta" }],
   });
 });
 

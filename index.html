@@ -12,7 +12,10 @@
 <meta property="og:description" content="Você manda um link. Seu cliente escolhe o serviço, o dia e o horário, paga na hora e o dinheiro cai direto na sua conta.">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://miaapp.com.br/">
-<!-- TODO: og:image quando a arte social estiver definida -->
+<meta property="og:image" content="https://miaapp.com.br/assets/og-image.png">
+<meta name="twitter:title" content="Mia · Seu cliente marca o horário e paga sozinho">
+<meta name="twitter:description" content="Você manda um link. Seu cliente escolhe o serviço, o dia e o horário, paga na hora e o dinheiro cai direto na sua conta.">
+<meta name="twitter:image" content="https://miaapp.com.br/assets/og-image.png">
 
 <!-- OpenAI Ads (ChatGPT Ads) — script de configuração do painel, no topo do <head> -->
 <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Hp6vxcY38XyiUvp6rbK3mq"});</script>
@@ -71,6 +74,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/vsl.css">
 </head>
 <body>
 
@@ -95,36 +99,56 @@
 
 <main>
 
-<section class="hero" id="hero">
+<section class="hero hero--vsl" id="hero">
   <div class="container hero__inner">
     <div class="hero__copy">
       <span class="badge"><span class="badge__dot" aria-hidden="true"></span>SEM MENSALIDADE</span>
       <h1 class="hero__title">Seu cliente marca o horário e paga <span class="hl">sozinho</span>.</h1>
-      <p class="hero__sub">Você manda um link. Ele escolhe o serviço, o dia e o horário, paga na hora e o dinheiro cai direto na sua conta.</p>
+      <p class="hero__sub">Você manda um link. Ele escolhe o serviço, o dia e o horário e paga do jeito que você definir (no agendamento, com sinal ou no dia).</p>
       <div class="hero__ctas">
         <a class="btn btn--coral btn--lg" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-hero" data-cta="criar-link" data-cta-location="hero">Criar meu link grátis</a>
         <a class="btn btn--ghost btn--lg" href="#como-funciona" id="cta-como-funciona-hero" data-cta="ver-como-funciona" data-cta-location="hero">Ver como funciona</a>
       </div>
     </div>
 
-    <div class="hero__mock">
-      <div class="phone phone--wa" aria-hidden="true">
-        <div class="wa__top">
-          <span class="wa__clock">9:41</span>
-          <span class="wa__avatar"></span>
-          <span class="wa__name">Bianca Torres</span>
+    <div class="vsl" data-vsl data-fase="capa">
+      <div class="vsl__tela">
+        <!-- muted: o navegador só deixa a prévia tocar sozinha sem som. O vsl.js liga o som no toque. -->
+        <video class="vsl__video" poster="/assets/vsl-capa.jpg" muted playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate" aria-label="Vídeo de apresentação da Mia">
+          <source src="/assets/vsl.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="vsl__camada vsl__camada--capa" data-vsl-assistir aria-label="Assistir ao vídeo">
+          <span class="vsl__play"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240 128a15.74 15.74 0 0 1-7.6 13.51L88.32 229.65a16 16 0 0 1-16.2.3A15.86 15.86 0 0 1 64 216.13V39.87a15.86 15.86 0 0 1 8.12-13.82 16 16 0 0 1 16.2.3l144.08 88.14A15.74 15.74 0 0 1 240 128Z"/></svg></span>
+        </button>
+        <button type="button" class="vsl__camada vsl__camada--previa" data-vsl-assistir>
+          <span class="vsl__aviso">
+            <span class="vsl__aviso-icone"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M155.51 24.81a8 8 0 0 0-8.42.88L77.25 80H32a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h45.25l69.84 54.31A8 8 0 0 0 160 224V32a8 8 0 0 0-4.49-7.19ZM192 96a8 8 0 0 0-8 8v48a8 8 0 0 0 16 0v-48a8 8 0 0 0-8-8Zm32-16a8 8 0 0 0-8 8v80a8 8 0 0 0 16 0V88a8 8 0 0 0-8-8Z"/></svg></span>
+            <span class="vsl__aviso-texto"><b>Toque para ouvir</b></span>
+          </span>
+        </button>
+        <button type="button" class="vsl__camada vsl__camada--toque" data-vsl-pausa aria-label="Pausar vídeo">
+          <span class="vsl__continuar"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240 128a15.74 15.74 0 0 1-7.6 13.51L88.32 229.65a16 16 0 0 1-16.2.3A15.86 15.86 0 0 1 64 216.13V39.87a15.86 15.86 0 0 1 8.12-13.82 16 16 0 0 1 16.2.3l144.08 88.14A15.74 15.74 0 0 1 240 128Z"/></svg>Continuar assistindo</span>
+        </button>
+        <span class="vsl__retomado" role="status" data-vsl-retomado>Continuando de onde você parou</span>
+        <div class="vsl__camada vsl__camada--fim">
+          <a class="btn btn--coral btn--lg" href="https://web.miaapp.com.br/auth/sign-up" id="cta-criar-vsl" data-cta="criar-link" data-cta-location="vsl">Criar meu link grátis</a>
+          <button type="button" class="vsl__de-novo" data-vsl-de-novo><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224 128a96 96 0 0 1-94.71 96H128a95.38 95.38 0 0 1-65.9-26.2 8 8 0 0 1 11-11.63A80 80 0 1 0 71.43 71.39a3.07 3.07 0 0 1-.26.25L44.59 96H72a8 8 0 0 1 0 16H24a8 8 0 0 1-8-8V56a8 8 0 0 1 16 0v29.8L60.25 60A96 96 0 0 1 224 128Z"/></svg>Assistir de novo</button>
         </div>
-        <div class="wa__thread">
-          <div class="wa__msg wa__msg--in">Oi! Tem horário na quinta?</div>
-          <div class="wa__msg wa__msg--out">
-            <div class="wa__preview">
-              <div class="wa__preview-title">Carla Nunes · Cílios</div>
-              <div class="wa__preview-url">mia.app/carlanunes</div>
-            </div>
-            <div class="wa__msg-text">Escolhe aqui o horário que ficar melhor pra você</div>
+        <div class="vsl__camada vsl__camada--erro">Não foi possível carregar o vídeo.</div>
+        <div class="vsl__barra">
+          <div class="vsl__botoes">
+            <button type="button" data-vsl-pausa aria-label="Pausar vídeo">
+              <span class="vsl__icone-pausa"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216 48v160a16 16 0 0 1-16 16h-40a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h40a16 16 0 0 1 16 16ZM96 32H56a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h40a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Z"/></svg></span>
+              <span class="vsl__icone-tocar"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240 128a15.74 15.74 0 0 1-7.6 13.51L88.32 229.65a16 16 0 0 1-16.2.3A15.86 15.86 0 0 1 64 216.13V39.87a15.86 15.86 0 0 1 8.12-13.82 16 16 0 0 1 16.2.3l144.08 88.14A15.74 15.74 0 0 1 240 128Z"/></svg></span>
+            </button>
+            <span class="vsl__espaco"></span>
+            <button type="button" data-vsl-som aria-label="Tirar o som">
+              <span class="vsl__icone-som"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M155.51 24.81a8 8 0 0 0-8.42.88L77.25 80H32a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h45.25l69.84 54.31A8 8 0 0 0 160 224V32a8 8 0 0 0-4.49-7.19ZM192 96a8 8 0 0 0-8 8v48a8 8 0 0 0 16 0v-48a8 8 0 0 0-8-8Zm32-16a8 8 0 0 0-8 8v80a8 8 0 0 0 16 0V88a8 8 0 0 0-8-8Z"/></svg></span>
+              <span class="vsl__icone-mudo"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M155.51 24.81a8 8 0 0 0-8.42.88L77.25 80H32a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h45.25l69.84 54.31A8 8 0 0 0 160 224V32a8 8 0 0 0-4.49-7.19Z"/><path d="M190 102l52 52m0-52-52 52" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg></span>
+            </button>
+            <button type="button" data-vsl-tela-cheia aria-label="Tela cheia"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216 48v40a8 8 0 0 1-16 0V56h-32a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8ZM88 200H56v-32a8 8 0 0 0-16 0v40a8 8 0 0 0 8 8h40a8 8 0 0 0 0-16Zm120-40a8 8 0 0 0-8 8v32h-32a8 8 0 0 0 0 16h40a8 8 0 0 0 8-8v-40a8 8 0 0 0-8-8ZM88 40H48a8 8 0 0 0-8 8v40a8 8 0 0 0 16 0V56h32a8 8 0 0 0 0-16Z"/></svg></button>
           </div>
-          <div class="wa__msg wa__msg--in">Peguei 15h e já paguei no Pix</div>
-          <div class="wa__receipt"><span class="wa__receipt-dot"></span>R$ 120,00 na sua conta</div>
+          <span class="vsl__progresso" aria-hidden="true"><span></span></span>
         </div>
       </div>
     </div>
@@ -159,7 +183,7 @@
       <article class="step">
         <div class="step__head">
           <span class="step__num step__num--blue">2</span>
-          <h3 class="step__title">Ele escolhe e paga</h3>
+          <h3 class="step__title">Ele escolhe e reserva</h3>
         </div>
         <p class="step__text">Vê seus serviços, escolhe o dia e o horário livre e paga ali mesmo. Sem baixar app, sem te chamar.</p>
         <div class="step__figure step__figure--center">
@@ -406,12 +430,37 @@
           <span class="tag tag--grey">OPCIONAL</span>
         </div>
         <p class="plan__text">Você só habilita se quiser oferecer essa opção pro seu cliente.</p>
+        <p class="plan__subname">Parcelamento</p>
+        <p class="plan__text">Seu cliente pode parcelar no cartão de crédito. Os juros do parcelamento podem ser repassados a ele.</p>
         <dl class="fees">
           <div class="fee"><dt>Por atendimento pago no cartão</dt><dd>3,89% + R$ 0,99</dd></div>
           <div class="fee"><dt>Pra transferir esse valor pro seu banco</dt><dd>R$ 3,87</dd></div>
           <div class="fee"><dt>O dinheiro do cartão chega em</dt><dd>31 dias</dd></div>
         </dl>
         <p class="plan__note">Num atendimento de R$ 100 pago no cartão, a taxa dá menos de R$ 5.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pricing pricing--condicoes" id="condicoes-de-pagamento">
+  <div class="container pricing__inner">
+    <div class="pricing__head">
+      <p class="eyebrow eyebrow--blue">CONDIÇÕES DE PAGAMENTO</p>
+      <h2 class="h2">Você define quando seu cliente paga.</h2>
+    </div>
+    <div class="pricing__plans">
+      <article class="plan">
+        <h3 class="plan__name">No agendamento</h3>
+        <p class="plan__text">Paga o valor total ao reservar o horário.</p>
+      </article>
+      <article class="plan">
+        <h3 class="plan__name">Com sinal</h3>
+        <p class="plan__text">Paga uma parte ao reservar a data e o restante no dia do atendimento.</p>
+      </article>
+      <article class="plan">
+        <h3 class="plan__name">No atendimento</h3>
+        <p class="plan__text">Paga tudo no dia, na hora do serviço.</p>
       </article>
     </div>
   </div>
@@ -559,6 +608,14 @@
         <summary>Vou perder o contato do meu cliente?<span class="plus" aria-hidden="true">+</span></summary>
         <p>Não. A conversa continua sendo sua, no seu WhatsApp. A Mia só tira de você a parte chata.</p>
       </details>
+      <details>
+        <summary>Meu cliente pode parcelar?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Sim, no cartão de crédito. Os juros do parcelamento podem ser repassados ao cliente.</p>
+      </details>
+      <details>
+        <summary>Meu cliente precisa pagar tudo na hora de agendar?<span class="plus" aria-hidden="true">+</span></summary>
+        <p>Não. Você escolhe: pagamento total no agendamento, sinal na reserva com o restante no dia, ou tudo no dia do atendimento.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -580,7 +637,8 @@
   <div class="container site-footer__inner">
     <span class="brand"><img src="/assets/mia-logo-branco.png" alt="Mia" width="782" height="318"></span>
     <nav class="site-footer__links" aria-label="Links institucionais">
-      <a href="/termos-de-uso-e-privacidade" data-cta="termos" data-cta-location="footer">Termos de Uso e Privacidade</a>
+      <a href="/termos-de-uso-e-privacidade" data-cta="termos" data-cta-location="footer"><span class="only-mobile">Termos</span><span class="only-desktop">Termos de uso</span></a>
+      <a href="/termos-de-uso-e-privacidade" data-cta="privacidade" data-cta-location="footer">Privacidade</a>
       <!-- Sem central de ajuda ainda: aponta para o WhatsApp do atendimento -->
       <a href="https://api.whatsapp.com/send/?phone=%2B5564999534103&amp;text=Oi%21+Preciso+de+ajuda+com+a+Mia.&amp;type=phone_number&amp;app_absent=0" data-cta="ajuda" data-cta-location="footer">Ajuda</a>
     </nav>
@@ -598,5 +656,6 @@
 
 <script src="/attribution.js" defer></script>
 <script src="/script.js" defer></script>
+<script src="/vsl.js" defer></script>
 </body>
 </html>

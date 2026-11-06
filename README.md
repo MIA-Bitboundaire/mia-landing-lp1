@@ -6,9 +6,11 @@ Site estático: HTML, CSS e um arquivo de JavaScript. **Sem build, sem dependên
 index.html      página completa
 termos-de-uso-e-privacidade.html  termos de uso e privacidade (servido em /termos-de-uso-e-privacidade)
 styles.css      estilos (mobile por padrão, desktop a partir de 1024px)
+vsl.css         estilos do vídeo (VSL) da hero
 script.js       barra fixa, carrossel das conversas e evento view_content
+vsl.js          player do vídeo da hero: prévia sem som, foco, retomada e eventos vsl_*
 attribution.js  guarda UTMs, gclid, fbclid e referrer do primeiro acesso e repassa nos links para o web.miaapp.com.br
-assets/         logo (versão branca usada na página) e favicon
+assets/         logo (versão branca usada na página), favicon, og-image e o vídeo da hero (vsl.mp4 + capa)
 ```
 
 ## Rodar local
@@ -41,7 +43,8 @@ Para trocar de host, qualquer serviço de site estático serve o repositório di
 - **RudderStack JS SDK v3** — write key `34ndFYFhQmaiPjSdHmsHucwPRtV`, dataplane `bitboundaipthl.dataplane.rudderstack.com`.
   - A chamada `rudderanalytics.page()` é **explícita** no HTML: o SDK v3 removeu a chamada implícita das versões anteriores, e sem ela nenhum page view é enviado. Não remover.
   - `useBeacon: true` garante a entrega do evento mesmo quando o clique leva o usuário para outro domínio.
-- **`view_content`** — disparado em `script.js` no clique em qualquer link que saia do domínio, com as propriedades `button`, `button_location` e `destination_url`. A regra é por domínio: link novo para fora passa a ser rastreado sozinho.
+- **`view_content`** — disparado em `script.js` no clique em qualquer link que saia do domínio, com as propriedades `content_name` (texto do botão), `content_type: "cta"`, `location` e `destination`. O mesmo clique dispara `contents_viewed` no pixel da OpenAI. A regra é por domínio: link novo para fora passa a ser rastreado sozinho.
+- **VSL da hero** — `vsl.js` envia `vsl_play`, `vsl_progress` (10/25/30/50/60/75/80/90/100%), `vsl_pause`, `vsl_resume`, `vsl_complete` e `vsl_exit` para o RudderStack e o Clarity. A prévia sem som não conta.
 - **GTM e Meta Pixel** — há comentários `TODO RASTREIO` no `<head>` e no início do `<body>` marcando onde colar os snippets.
 
 O evento de cadastro/agendamento **não** é disparado aqui; ele acontece no domínio do app.
@@ -56,6 +59,5 @@ O evento de cadastro/agendamento **não** é disparado aqui; ele acontece no dom
 
 - [ ] Confirmar a URL de login do botão "Entrar" (está como `https://web.miaapp.com.br/auth/sign-in`, deduzida a partir da URL de cadastro — há um comentário `CONFIRMAR` no HTML).
 - [ ] URL da central de ajuda (hoje o link "Ajuda" aponta para o WhatsApp do atendimento).
-- [ ] `og:image` (o `og:url` já aponta para `https://miaapp.com.br/`).
 - [ ] Confirmar que o pixel já instalado em `web.miaapp.com.br` emite `registration_completed` ao fim do cadastro (carregar o pixel não basta: o evento é chamada explícita) e que o `oppref` da landing chega até lá.
 - [ ] Seção "Como fica no WhatsApp": as conversas são **ilustrativas** e estão sinalizadas como tal. Com prints reais e autorização por escrito, trocar por imagens (tarjando telefone e foto) e retomar o título "Quem já usa".
